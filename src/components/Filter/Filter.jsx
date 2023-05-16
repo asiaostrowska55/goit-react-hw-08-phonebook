@@ -1,5 +1,5 @@
 import css from './Filter.module.css';
-import { setFilter } from '../../redux/filterSlicer';
+import { setFilter } from '../../redux/phonebook/filterSlicer';
 import { useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
 

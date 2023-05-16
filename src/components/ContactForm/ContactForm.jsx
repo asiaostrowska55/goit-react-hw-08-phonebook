@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
-import { selectContacts } from 'redux/selectors';
-import { addContact } from 'redux/contactSlicer';
+import { selectContacts } from 'redux/phonebook/selectors';
+import { addContact } from 'redux/phonebook/contactSlicer';
 import css from './ContactForm.module.css';
 
 const ContactForm = () => {

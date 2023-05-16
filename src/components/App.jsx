@@ -6,8 +6,8 @@ import Filter from './Filter/Filter';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { selectIsLoading, selectError } from 'redux/selectors';
-import { fetchContacts } from 'redux/contactSlicer';
+import { selectIsLoading, selectError } from 'redux/phonebook/selectors';
+import { fetchContacts } from 'redux/phonebook/contactSlicer';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -26,6 +26,13 @@ export const App = () => {
       <Filter />
       <ContactList></ContactList>
       {!!isLoading && !error && <b>Loading...</b>}
+
+      <Header />
+      <Routes>
+        <Route path="/" element={<Header />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
     </div>
   );
 };
