@@ -1,12 +1,12 @@
 import React from 'react';
-import ContactForm from './ContactForm/ContactForm';
-import ContactList from './ContactList/ContactList';
-import Filter from './Filter/Filter';
+import ContactForm from 'components/ContactForm/ContactForm';
+import ContactList from 'components/ContactList/ContactList';
+import Filter from 'components/Filter/Filter';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { selectIsLoading, selectError } from 'redux/operations/selectors';
-import { fetchContacts } from 'redux/contactSlicer';
+import { selectIsLoading, selectError } from 'redux/phonebook/selectors';
+import { fetchContacts } from 'redux/phonebook/contactSlicer';
 
 export const App = () => {
   const dispatch = useDispatch();

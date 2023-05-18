@@ -1,4 +1,4 @@
-const UserMenu = () => {
+export const UserMenu = () => {
   return (
     <div>
       <p>mango@mail.com</p>

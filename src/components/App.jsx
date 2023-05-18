@@ -1,11 +1,10 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { lazy } from 'react';
 import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { useAuth } from '../hooks/useAuth';
-import { refreshUser } from '../redux/auth/perationsAuth';
-import { PrivateRoute } from './PrivateRoute/PrivateRoute';
-import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
+import { refreshUser } from '../redux/auth/operationsAuth';
+import { PrivateRoute } from './PrivateRoute';
+import { RestrictedRoute } from './RestrictedRoute';
 import { Layout } from './Layout/Layout';
 
 const Home = lazy(() => import('../pages/Home'));

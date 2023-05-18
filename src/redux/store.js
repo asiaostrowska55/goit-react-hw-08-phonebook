@@ -11,8 +11,8 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth/sliceAuth';
-import { contactsReducer } from 'redux/phonebook/contactsSlice';
-import { filterReducer } from 'redux/phonebook/filterSlice';
+import { contactsReducer } from 'redux/phonebook/contactSlicer';
+import { filterReducer } from 'redux/phonebook/filterSlicer';
 
 const middleware = {
   serializableCheck: {
