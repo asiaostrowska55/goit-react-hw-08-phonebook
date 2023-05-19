@@ -25,7 +25,7 @@ const ContactsList = ({ storage }) => {
       : filterContact.map(item => {
           return (
             <li key={item.id} id={item.id} className={css.element}>
-              {item.name}: {item.phone}
+              {item.name}: {item.number}
               <button
                 onClick={() => handledDelete(item.id)}
                 className={css.btnDelete}
