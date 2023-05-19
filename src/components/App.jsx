@@ -6,6 +6,7 @@ import { refreshUser } from '../redux/auth/operations';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
 import { Layout } from './Layout/Layout';
+import HomeLogged from 'pages/HomeLogged';
 
 const Home = lazy(() => import('../pages/Home'));
 const Login = lazy(() => import('../pages/Login'));
@@ -42,6 +43,12 @@ const App = () => {
           path="/phonebook"
           element={
             <PrivateRoute redirectTo="/login" component={<Phonebook />} />
+          }
+        />
+        <Route
+          path="/homepage"
+          element={
+            <PrivateRoute redirectTo="/login" component={<HomeLogged />} />
           }
         />
       </Route>

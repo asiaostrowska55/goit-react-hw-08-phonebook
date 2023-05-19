@@ -7,12 +7,18 @@ export const Navigation = () => {
 
   return (
     <nav>
-      <NavLink className={css.link} to="/">
-        Home
-      </NavLink>
-      {isLoggedIn && (
-        <NavLink className={css.link} to="/phonebook">
-          Phonebook
+      {isLoggedIn ? (
+        <>
+          <NavLink className={css.link} to="/homepage">
+            Home
+          </NavLink>
+          <NavLink className={css.link} to="/phonebook">
+            Phonebook
+          </NavLink>
+        </>
+      ) : (
+        <NavLink className={css.link} to="/">
+          Home
         </NavLink>
       )}
     </nav>
