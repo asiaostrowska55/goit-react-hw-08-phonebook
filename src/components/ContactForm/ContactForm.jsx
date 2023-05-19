@@ -4,6 +4,7 @@ import { selectContacts } from 'redux/selectors';
 import { addContact } from 'redux/phonebook/contactSlicer';
 import css from './ContactForm.module.css';
 import { Button } from '@mui/material';
+import TextField from '@mui/material/TextField';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
@@ -29,7 +30,6 @@ const ContactForm = () => {
           number: form.number.value,
         })
       );
-      console.log(form.number.value);
     }
     form.reset();
   };
@@ -43,7 +43,10 @@ const ContactForm = () => {
         <label className={css.label} htmlFor={nameId}>
           Name
         </label>
-        <input
+        <TextField
+          variant="outlined"
+          size="small"
+          htmlFor={nameId}
           id={nameId}
           type="text"
           name="name"
@@ -52,10 +55,13 @@ const ContactForm = () => {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
+
         <label className={css.label} htmlFor={numberId}>
           Number
         </label>
-        <input
+        <TextField
+          variant="outlined"
+          size="small"
           id={numberId}
           type="tel"
           name="number"
@@ -65,7 +71,12 @@ const ContactForm = () => {
           required
           autoComplete="tel"
         />
-        <Button type="submit" variant="outlined" size="small">
+
+        <Button
+          type="submit"
+          variant="outlined"
+          style={{ width: '150px', marginTop: '30px', alignSelf: 'center' }}
+        >
           Add contact
         </Button>
       </form>
