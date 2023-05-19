@@ -20,6 +20,9 @@ export const register = createAsyncThunk(
       setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
+      if (error.response.data.code === 11000) {
+        alert('This email is already in use');
+      }
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -50,7 +53,7 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
 });
 
 export const refreshUser = createAsyncThunk(
-  'auth/refreshresponse',
+  'auth/refresh',
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
     const persistedToken = state.auth.token;
@@ -61,7 +64,7 @@ export const refreshUser = createAsyncThunk(
 
     try {
       setAuthHeader(persistedToken);
-      const response = await axios.get('/users/me');
+      const response = await axios.get('/users/contacts');
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

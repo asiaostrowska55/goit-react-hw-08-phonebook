@@ -2,13 +2,13 @@ import React from 'react';
 import ContactForm from 'components/ContactForm/ContactForm';
 import ContactList from 'components/ContactList/ContactList';
 import Filter from 'components/Filter/Filter';
-
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { selectIsLoading, selectError } from 'redux/phonebook/selectors';
+import { selectIsLoading, selectError } from 'redux/selectors';
 import { fetchContacts } from 'redux/phonebook/contactSlicer';
+import { Helmet } from 'react-helmet-async';
 
-export const App = () => {
+export default function Phonebook() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
@@ -18,13 +18,14 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <h1>Phonebook</h1>
+    <>
+      <Helmet>
+        <title>Phonebook</title>
+      </Helmet>
       <ContactForm />
-      <h2>Contacts</h2>
       <Filter />
-      <ContactList></ContactList>
+      <ContactList />
       {!!isLoading && !error && <b>Loading...</b>}
-    </div>
+    </>
   );
-};
+}

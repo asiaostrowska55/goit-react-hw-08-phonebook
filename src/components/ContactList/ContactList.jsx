@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import css from './ContactList.module.css';
 import { deleteContact } from 'redux/phonebook/contactSlicer';
-import { selectFilter, selectContacts } from 'redux/phonebook/selectors';
+import { selectFilter, selectContacts } from 'redux/selectors';
 
 const ContactsList = ({ storage }) => {
   const contacts = useSelector(selectContacts);

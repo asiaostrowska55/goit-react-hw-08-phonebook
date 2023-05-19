@@ -2,7 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { useAuth } from '../hooks/useAuth';
-import { refreshUser } from '../redux/auth/operationsAuth';
+import { refreshUser } from '../redux/auth/operations';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
 import { Layout } from './Layout/Layout';
