@@ -3,6 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import css from './ContactList.module.css';
 import { deleteContact } from 'redux/phonebook/contactSlicer';
 import { selectFilter, selectContacts } from 'redux/selectors';
+import { Button } from '@mui/material';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
 
 const ContactsList = ({ storage }) => {
   const contacts = useSelector(selectContacts);
@@ -24,15 +27,19 @@ const ContactsList = ({ storage }) => {
       ? ''
       : filterContact.map(item => {
           return (
-            <li key={item.id} id={item.id} className={css.element}>
-              {item.name}: {item.number}
-              <button
+            <ListItem key={item.id} id={item.id} className={css.element}>
+              <ListItemText primary={`{item.name}: {item.number}`} />
+
+              <Button
                 onClick={() => handledDelete(item.id)}
-                className={css.btnDelete}
+                // className={css.btnDelete}
+                type="submit"
+                variant="outlined"
+                size="small"
               >
                 Delete
-              </button>
-            </li>
+              </Button>
+            </ListItem>
           );
         });
 

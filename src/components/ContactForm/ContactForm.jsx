@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid';
 import { selectContacts } from 'redux/selectors';
 import { addContact } from 'redux/phonebook/contactSlicer';
 import css from './ContactForm.module.css';
+import { Button } from '@mui/material';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
@@ -64,9 +65,9 @@ const ContactForm = () => {
           required
           autoComplete="tel"
         />
-        <button className={css.btn} type="submit">
+        <Button type="submit" variant="outlined" size="small">
           Add contact
-        </button>
+        </Button>
       </form>
     </div>
   );
