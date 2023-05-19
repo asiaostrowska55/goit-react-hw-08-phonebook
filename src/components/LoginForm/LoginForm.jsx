@@ -43,7 +43,7 @@ export const LoginForm = () => {
       <Button
         type="submit"
         variant="outlined"
-        style={{ width: '100px', marginTop: '30px', lignSelf: 'center' }}
+        style={{ width: '100px', marginTop: '30px', alignSelf: 'center' }}
       >
         Log In
       </Button>

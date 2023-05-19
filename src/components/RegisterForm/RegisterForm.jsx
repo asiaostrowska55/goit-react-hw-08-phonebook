@@ -54,7 +54,7 @@ export const RegisterForm = () => {
       <Button
         type="submit"
         variant="outlined"
-        style={{ width: '100px', marginTop: '30px', lignSelf: 'center' }}
+        style={{ width: '100px', marginTop: '30px', alignSelf: 'center' }}
       >
         Register
       </Button>

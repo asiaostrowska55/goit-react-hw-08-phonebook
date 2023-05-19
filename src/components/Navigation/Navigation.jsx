@@ -17,7 +17,7 @@ export const Navigation = () => {
           </NavLink>
         </>
       ) : (
-        <NavLink className={css.link} to="/">
+        <NavLink className={css.homeLink} to="/">
           Home
         </NavLink>
       )}

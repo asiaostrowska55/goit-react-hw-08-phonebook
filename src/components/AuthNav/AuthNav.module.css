@@ -1,18 +1,12 @@
-.div {
-  display: flex;
-  gap: 20px;
-  flex-direction: row;
-  align-items: center;
-}
 .link {
-  color: #111;
+  display: inline-block;
   text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
+  padding: 12px;
+  font-weight: 700;
+  color: #2a363b;
+  transition: 0.5s ease-in-out;
 }
-.active {
-  color: red;
-  text-decoration: underline;
+
+.link:hover {
+  color: #e84a5f;
 }
